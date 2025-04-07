@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+
+<mapper namespace="com.mbc.kee12.library.LibraryService">
+<insert id="insertok">
+insert into library0401 values (bnum_seq.nextval, #{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6},0)
+</insert>
+<select id="out2" resultType="com.mbc.kee12.library.LibraryDTO">
+select bnum,bname,bwriter,to_char(bdate,'yyyy-MM-dd')bdate,bintro,bprice,bimg, libreadcnt from library0401
+</select>
+<update id="readcnt">
+update library0401 set libreadcnt = libreadcnt +1 where bnum=#{param1}
+</update>
+<select id="lidetail" resultType="com.mbc.kee12.library.LibraryDTO">
+    select bnum, bname, bwriter, bdate = to_date(#{param3}, 'yyyy-MM-dd'), bintro,
+    bprice, bimg, libreadcnt 
+    from library0401 
+    where bnum = #{param1}
+</select>
+<select id="modify1" resultType="com.mbc.kee12.library.LibraryDTO">
+select * from library0401 where bnum=#{param1}
+</select>
+<update id="modify2">
+update library0401 set bname = #{param1},bwriter= #{param2}
+,bdate= #{param3},bintro= #{param4},bprice= #{param5}
+, bimg= #{param6} where bnum= #{param7}
+</update>
+</mapper> 

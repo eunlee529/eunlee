@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+   <definition name="baseLayout" template="/WEB-INF/views/layout.jsp">
+      <put-attribute name="title" value=""/>
+      <put-attribute name="top" value="/WEB-INF/views/top.jsp"/>
+      <put-attribute name="body" value=""/>
+      <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+   </definition>
+   
+   <definition name="main" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/main.jsp"/>
+   </definition>
+    
+    <definition name="binput" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF//views/board/binput.jsp"/>
+   </definition>
+   
+   <definition name="bout" extends="baseLayout">
+      <put-attribute name="title" value="출력화면"/>
+      <put-attribute name="body" value="/WEB-INF//views/board/bout.jsp"/>
+   </definition>
+   
+   <definition name="detailview" extends="baseLayout">
+      <put-attribute name="title" value="자세히보기"/>
+      <put-attribute name="body" value="/WEB-INF//views/board/detailview.jsp"/>
+   </definition>
+   
+   <definition name="reply" extends="baseLayout">
+      <put-attribute name="title" value="댓글"/>
+      <put-attribute name="body" value="/WEB-INF//views/board/reply.jsp"/>
+   </definition>
+   
+   <definition name="map" extends="baseLayout">
+      <put-attribute name="title" value="지도"/>
+      <put-attribute name="body" value="/WEB-INF//views/board/map.jsp"/>
+   </definition>
+   
+   <definition name="libin" extends="baseLayout">
+      <put-attribute name="title" value="지도"/>
+      <put-attribute name="body" value="/WEB-INF//views/library/libin.jsp"/>
+   </definition>
+   
+    <definition name="libout" extends="baseLayout">
+      <put-attribute name="title" value="출력"/>
+      <put-attribute name="body" value="/WEB-INF//views/library/libout.jsp"/>
+   </definition>
+   
+   <definition name="libdetailview" extends="baseLayout">
+      <put-attribute name="title" value="출력"/>
+      <put-attribute name="body" value="/WEB-INF/views/library/libdetailview.jsp"/>
+   </definition>
+   
+   <definition name="modify" extends="baseLayout">
+      <put-attribute name="title" value="출력"/>
+      <put-attribute name="body" value="/WEB-INF/views/library/modify.jsp"/>
+   </definition>
+   
+   <definition name="sinput" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/sinput.jsp"/>
+   </definition>
+   
+     <definition name="sout" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/sout.jsp"/>
+   </definition>
+   
+   <definition name="ddview" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/ddview.jsp"/>
+   </definition>
+   
+   <definition name="modiview" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/modiview.jsp"/>
+   </definition>
+   
+   <definition name="ssearch" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/ssearch.jsp"/>
+   </definition>
+   
+   <definition name="ssearchview" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/ssearchview.jsp"/>
+   </definition>
+   
+   <definition name="minput" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/member/minput.jsp"/>
+   </definition>
+   
+   <definition name="login" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/login/login.jsp"/>
+   </definition>
+   
+   <definition name="bdinput" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board2/bdinput.jsp"/>
+   </definition>
+   
+    <definition name="bdout" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board2/bdout.jsp"/>
+   </definition>
+   
+   <definition name="bdetailvieww" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board2/bdetailvieww.jsp"/>
+   </definition>
+   
+   <definition name="bdreply" extends="baseLayout">
+      <put-attribute name="title" value="입력화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board2/bdreply.jsp"/>
+   </definition>
+   
+</tiles-definitions>
+

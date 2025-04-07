@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+
+<mapper namespace="com.mbc.kee12.board.BoardService">
+<insert id="insertbd">
+insert into board values (board_seq.nextval,#{param2},#{param1},#{param3},sysdate,0,board_seq.currval,0,0)
+</insert>
+<select id="all2out" resultType="com.mbc.kee12.board.BoardDTO">
+select boardnum,boardtitle,boardwriter,boardcontent,to_char(boarddate,'yyyy-MM-dd')boarddate,boardreadcnt,
+groups,step,indent from board order by groups desc,step asc
+</select>
+<update id="readcntup">
+update board set boardreadcnt = boardreadcnt + 1 where boardnum=#{param1}
+</update>
+<select id="detail" resultType="com.mbc.kee12.board.BoardDTO">
+select boardnum,boardtitle,boardwriter,boardcontent,to_char(boarddate,'yyyy-MM-dd')boarddate,boardreadcnt,
+groups,step,indent from board where boardnum=#{param1}
+</select>
+<select id="alldata" resultType="com.mbc.kee12.board.BoardDTO">
+select boardnum,boardtitle,boardwriter,boardcontent,to_char(boarddate,'yyyy-MM-dd')boarddate,boardreadcnt,
+groups,step,indent from board where boardnum=#{param1}
+</select>
+<insert id="appendc">
+insert into board values(board_seq.nextval,#{param2},#{param3},#{param4},sysdate,0,#{param5},#{param6},#{param7})
+</insert>
+<update id="stepup">
+update board set step = step+1 where groups=#{param1} and step > #{param2}
+</update>
+
+<!--  44444444 -->
+<!-- 페이징처리에서 전체레코드수 구하기 -->
+<select id="total" resultType="int">
+   select count(*)from BOARD
+</select>
+
+<select id="page" resultType="com.mbc.kee12.board.BoardDTO">
+   select * from (
+   select rownum rn,A.* from(  
+   select boardnum,boardwriter,boardtitle,boardcontent,to_char(boarddate,'yyyy-MM-dd')boarddate
+   ,boardreadcnt,groups,step,indent from BOARD order by groups DESC,step asc)A)
+   where rn between #{start} AND #{end}
+</select>
+<!--  444444 -->
+
+</mapper> 

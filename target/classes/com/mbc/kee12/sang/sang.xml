@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbc.kee12.sang.SangService">    
+ 
+ <insert id="inserta">
+ insert into sang0402 values (snum0402_seq.nextval,#{param1},#{param2})
+ </insert>   
+<select id="all2out" resultType="com.mbc.kee12.sang.SangDTO">
+select * from sang0402 
+</select> 
+<select id="deletee" resultType="com.mbc.kee12.sang.SangDTO">
+select * from sang0402 where snum=#{param1}
+</select> 
+<delete id="delete22">
+delete from sang0402 where snum=#{param1}
+</delete>
+<select id="modify11" resultType="com.mbc.kee12.sang.SangDTO">
+select * from sang0402 where snum =#{param1}
+</select>
+<update id="insertmodi">
+update sang0402 set sname=#{param2},simg=#{param3} where snum=#{param1} 
+</update>
+
+<select id="searchgo" resultType="com.mbc.kee12.sang.SangDTO">
+ SELECT * FROM sang0402
+	<where>
+		<choose>
+			<when test="param1=='snum'">
+			snum like '%' || #{param2} || '%'
+		</when>
+		<when test="param1=='sname'">
+			sname like '%' || #{param2} || '%'
+		</when>
+		</choose>
+	</where>
+
+</select>
+</mapper>
